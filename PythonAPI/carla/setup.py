@@ -106,13 +106,14 @@ def get_libcarla_extensions():
             sys.version_info.major,
             sys.version_info.minor)
 
-        extra_link_args = ['shlwapi.lib' ]
+        extra_link_args = ['shlwapi.lib', 'Advapi32.lib']
 
         required_libs = [
             pylib, 'libboost_filesystem',
             'rpc.lib', 'carla_client.lib',
             'libpng.lib', 'zlib.lib',
-            'Recast.lib', 'Detour.lib', 'DetourCrowd.lib']
+            'Recast.lib', 'Detour.lib', 'DetourCrowd.lib', 
+            'converter.lib', 'xerces-c_3.lib']
 
         # Search for files in 'PythonAPI\carla\dependencies\lib' that contains
         # the names listed in required_libs in it's file name
